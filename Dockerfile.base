@@ -1,0 +1,8 @@
+
+FROM node:16.8.0
+
+WORKDIR /opt/node_app
+
+COPY package.json yarn.lock ./
+
+RUN yarn  && yarn cache clean

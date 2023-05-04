@@ -1,0 +1,71 @@
+{
+  "name": "intelligence-api",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "typescript": true,
+    "declarations": true
+  },
+  "scripts": {
+    "start": "yarn uglify && egg-scripts start --title=egg-server-intelligence-api",
+    "stop": "egg-scripts stop --title=egg-server-intelligence-api",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test-local": "egg-bin test",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "cov": "egg-bin cov",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "ci": "npm run lint && npm run cov && npm run tsc",
+    "autod": "autod",
+    "lint": "eslint . --ext .ts --resolve-plugins-relative-to .",
+    "clean": "ets clean",
+    "uglify": "sh ./scripts/uglify.sh",
+    "migrations": "migrate-mongo up -f config/migrate-mongo-config.js"
+  },
+  "dependencies": {
+    "egg": "^2.6.1",
+    "egg-swagger-doc": "^2.3.2",
+    "ip2region": "^2.3.0",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "migrate-mongo": "^9.0.0",
+    "moment": "^2.29.4",
+    "mongodb-uri": "^0.9.7",
+    "swagger-ui-dist": "^4.18.3",
+    "uglifyjs-folder": "^3.2.0",
+    "utility": "^1.17.0"
+  },
+  "devDependencies": {
+    "@eggjs/tsconfig": "^1.0.0",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.12",
+    "@types/supertest": "^2.0.0",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^2.1.0",
+    "egg-cors": "^2.2.3",
+    "egg-mock": "^3.16.0",
+    "egg-mongoose": "^3.3.1",
+    "egg-scripts": "^2.17.0",
+    "eslint": "^8.0.0",
+    "eslint-config-egg": "^12.0.0",
+    "typescript": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "ci": {
+    "version": "14, 16, 18"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "",
+  "license": "MIT"
+}

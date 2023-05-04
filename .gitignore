@@ -1,0 +1,21 @@
+logs/
+npm-debug.log
+node_modules/
+coverage/
+.idea/
+typings/
+run/
+.DS_Store
+.vscode
+*.swp
+!.autod.conf.js
+
+/typings/app
+/typings/config
+
+app/**/*.js
+test/**/*.js
+# config/**/*.js
+app/**/*.map
+test/**/*.map
+config/**/*.map
