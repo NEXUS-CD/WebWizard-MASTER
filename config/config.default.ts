@@ -67,7 +67,6 @@ export default (appInfo: EggAppInfo) => {
     routerMap: false, // 是否启用自动生成路由(实验功能)，默认 true
     enable: true, // 默认 true
   };
-
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
