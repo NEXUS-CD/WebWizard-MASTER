@@ -1,7 +1,9 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2020",
+    "lib": ["es2020","ESNext"],
+    "types": ["node", "mocha", "supertest"],
     "module": "commonjs",
     "strict": true,
     "noImplicitAny": false,
@@ -30,7 +32,10 @@
     "app/public",
     "app/web",
     "app/views",
-    "node_modules*",
-    "typings/",
+    "node_modules/**",
+    "typings/"
+  ],
+  "include": [
+    "app/**/*.ts"
   ]
 }

@@ -3,6 +3,7 @@ import * as utility from "utility";
 import * as moment from "moment";
 import * as _ from "lodash";
 import * as jwt from "jsonwebtoken";
+import { userSchema } from "../validators/user";
 /**
  * @controller HomeController
  */
@@ -34,6 +35,8 @@ export default class HomeController extends Controller {
   async login() {
     const { ctx, app } = this;
     const user = ctx.request.body;
+    // 校验参数
+    if (! await userSchema.triggerValidation(ctx, user)) return
     // 密码加密
     user.password = utility.md5(user.password, "base64");
 

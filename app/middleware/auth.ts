@@ -8,6 +8,9 @@ export default () => async (ctx: Context, next) => {
     "/api/isLogining",
     "/swagger-ui.html",
     "/swagger-doc",
+    "/swagger-ui.css",
+    "/swagger-ui-bundle.js",
+    "/swagger-ui-standalone-preset.js"
   ];
   if (!whiteUrl.includes(ctx.request.url)) {
     // 判断jwt
