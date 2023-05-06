@@ -4,13 +4,7 @@
 
 ## QuickStart
 
-### Development
 
-```bash
-$ yarn i
-$ yarn un dev
-$ open http://localhost:7001/
-```
 
 Don't tsc compile at development mode, if you had run `tsc` then you need to `npm run clean` before `npm run dev`.
 
@@ -33,7 +27,7 @@ $ npm start
 - Typescript 2.8+
 
 
-项目目录结构：
+# 项目目录结构：
 
 ```
 ├── app                         # 存放应用程序源代码
@@ -81,3 +75,28 @@ $ npm start
 ├── tsconfig.json              # TypeScript配置文件
 └── yarn.lock                  # 锁定依赖版本的配置文件
 ```
+# 启动方式
+
+```bash
+$ yarn i
+$ yarn  dev
+$ open http://localhost:7001/
+```
+# 代码开发2选一，如下
+# 代码开发流程1
+1.router书写路由调用controller层
+2.controller书写代码，
+2.1记得书写swagger注释。如果swagger注释类型是对象类型，请在contract书写，其他swagger问题请github搜索egg-swagger查看官网demo
+2.2当前是否需要校验参数
+2.3如果需要校验参数请在validators下书写校验方法
+3.contract写入  if (! await userSchema.triggerValidation(ctx, user)) return 即可完成校验。调用service层
+4.service 中书写代码 调用model进行数据库操作
+5.如果没有对应model文件，再去创建model文件
+# 代码开发流程2 使用工具
+1.npm i -g nexus-easy-mvc
+2.输入mvc，根据交互输入对应的信息即可，注意支持的项目路径如下 （请在根目录使用,之后会使用配置时设置）
+  1.router:app/router.ts
+  2.controller:app/controller
+  3.service:app/service
+  4.model:app/model
+3.根据所需条件进行增删代码
