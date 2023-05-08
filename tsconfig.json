@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "target": "es2020",
-    "lib": ["es2020","ESNext"],
+    "lib": ["es2020", "ESNext"],
     "types": ["node", "mocha", "supertest"],
     "module": "commonjs",
     "strict": true,
@@ -24,10 +24,7 @@
     "inlineSourceMap": true,
     "importHelpers": true
   },
-  "typeRoots": [
-    "node_modules/@types",
-    "src/typings"
-  ],
+  "typeRoots": ["node_modules/@types", "src/typings"],
   "exclude": [
     "app/public",
     "app/web",
@@ -35,7 +32,5 @@
     "node_modules/**",
     "typings/"
   ],
-  "include": [
-    "app/**/*.ts"
-  ]
+  "include": ["app/**/*.ts"]
 }

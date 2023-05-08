@@ -1,21 +1,21 @@
 version: "3"
 services:
   redis:
-    image: 'redis:latest'
+    image: "redis:latest"
     container_name: redis
     ports:
-      - '6379:6379'
+      - "6379:6379"
     networks:
       - WebWizard
 
   mongo:
-    image: 'mongo:6.0.3'
+    image: "mongo:6.0.3"
     container_name: mongo
     ports:
-      - '27017:27017'
+      - "27017:27017"
     networks:
       - WebWizard
-      
+
 networks:
-    WebWizard:
-      driver: bridge
+  WebWizard:
+    driver: bridge

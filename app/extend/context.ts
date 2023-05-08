@@ -1,4 +1,4 @@
-import { Stream } from 'stream';
+import { Stream } from "stream";
 
 export interface Response {
   status?: number;
@@ -11,7 +11,7 @@ module.exports = {
   success({
     status = 200,
     code = 2000,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -25,7 +25,7 @@ module.exports = {
   badRequest({
     status = 400,
     code = 20001,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -39,7 +39,7 @@ module.exports = {
   unauthorized({
     status = 401,
     code = 10004,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -53,7 +53,7 @@ module.exports = {
   forbidden({
     status = 403,
     code = 20003,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -64,7 +64,7 @@ module.exports = {
     this.status = status;
   },
 
-  notFound({ status = 404, code, msg = '', data = {} }: Response = {}): void {
+  notFound({ status = 404, code, msg = "", data = {} }: Response = {}): void {
     this.body = {
       code,
       msg: msg || this.helper.errorMsg(code),
@@ -76,7 +76,7 @@ module.exports = {
   alreadExist({
     status = 409,
     code,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -90,7 +90,7 @@ module.exports = {
   licenseUnauthorized({
     status = 498,
     code = 30002,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -104,7 +104,7 @@ module.exports = {
   failure({
     status = 200,
     code = 20002,
-    msg = '',
+    msg = "",
     data = {},
   }: Response = {}): void {
     this.body = {
@@ -116,9 +116,9 @@ module.exports = {
   },
 
   file(filename: string, length = 0, content: string | Stream | Buffer): void {
-    this.set('Content-Disposition', `attachment; filename="${filename}"`);
-    this.set('Content-Length', `${length}`);
-    this.set('Content-Type', 'application/octet-stream');
+    this.set("Content-Disposition", `attachment; filename="${filename}"`);
+    this.set("Content-Length", `${length}`);
+    this.set("Content-Type", "application/octet-stream");
     this.body = content;
   },
 };

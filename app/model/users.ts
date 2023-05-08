@@ -1,5 +1,5 @@
 // import { Application } from 'egg';
-import { Document } from 'mongoose';
+import { Document } from "mongoose";
 
 export interface InterUserSchema extends Document {
   username: string;
@@ -26,8 +26,8 @@ export default (app) => {
     },
     {
       usePushEach: true,
-      timestamps: { createdAt: 'createTime', updatedAt: 'updateTime' },
-    },
+      timestamps: { createdAt: "createTime", updatedAt: "updateTime" },
+    }
   );
-  return mongoose.model('user', userSchame);
+  return mongoose.model("user", userSchame);
 };
