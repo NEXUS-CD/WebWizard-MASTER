@@ -36,7 +36,7 @@ export default class HomeController extends Controller {
     const { ctx, app } = this;
     const user = ctx.request.body;
     // 校验参数
-    if (! await userSchema.triggerValidation(ctx, user)) return
+    if (!(await userSchema.triggerValidation(ctx, user))) return;
     // 密码加密
     user.password = utility.md5(user.password, "base64");
 

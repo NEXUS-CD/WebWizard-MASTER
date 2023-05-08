@@ -21,7 +21,8 @@
     "lint": "eslint . --ext .ts --resolve-plugins-relative-to .",
     "clean": "ets clean",
     "uglify": "sh ./scripts/uglify.sh",
-    "migrations": "migrate-mongo up -f config/migrate-mongo-config.js"
+    "migrations": "migrate-mongo up -f config/migrate-mongo-config.js",
+    "lint-staged": "prettier --write ."
   },
   "dependencies": {
     "egg": "^2.6.1",
@@ -50,8 +51,15 @@
     "egg-mock": "^3.16.0",
     "egg-mongoose": "^3.3.1",
     "egg-scripts": "^2.17.0",
-    "eslint": "^8.0.0",
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-egg": "^12.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8",
     "typescript": "^4.0.0"
   },
   "engines": {

@@ -15,8 +15,8 @@ export default (app) => {
     },
     {
       usePushEach: true,
-      timestamps: { createdAt: 'createTime', updatedAt: 'updateTime' }
+      timestamps: { createdAt: "createTime", updatedAt: "updateTime" },
     }
   );
-  return mongoose.model('auditLog', auditLogsSchema)
-}
+  return mongoose.model("auditLog", auditLogsSchema);
+};

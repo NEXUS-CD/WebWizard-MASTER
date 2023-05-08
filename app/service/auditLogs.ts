@@ -1,13 +1,13 @@
 import { Service } from "egg";
 
 interface InterLogMsg {
-  visitorIp: String,
-  visitUrl: String,
-  username: String,
-  userId: String,
-  logType: String,
-  descible: String,
-  searchCon: String,
+  visitorIp: String;
+  visitUrl: String;
+  username: String;
+  userId: String;
+  logType: String;
+  descible: String;
+  searchCon: String;
 }
 
 export default class AuditLogs extends Service {
@@ -19,5 +19,4 @@ export default class AuditLogs extends Service {
     const res = await this.ctx.model.AuditLogs.create(logMsg);
     return res;
   }
-
 }

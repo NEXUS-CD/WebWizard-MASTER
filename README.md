@@ -4,8 +4,6 @@
 
 ## QuickStart
 
-
-
 Don't tsc compile at development mode, if you had run `tsc` then you need to `npm run clean` before `npm run dev`.
 
 ### Deploy
@@ -25,7 +23,6 @@ $ npm start
 
 - Node.js 8.x
 - Typescript 2.8+
-
 
 # 项目目录结构：
 
@@ -75,6 +72,7 @@ $ npm start
 ├── tsconfig.json              # TypeScript配置文件
 └── yarn.lock                  # 锁定依赖版本的配置文件
 ```
+
 # 启动方式
 
 ```bash
@@ -82,40 +80,44 @@ $ yarn i
 $ yarn  dev
 $ open http://localhost:7001/
 ```
-# 代码开发2选一，如下
-# 代码开发流程1
-1.router书写路由调用controller层
-2.controller书写代码，
-2.1记得书写swagger注释。如果swagger注释类型是对象类型，请在contract书写，其他swagger问题请github搜索egg-swagger查看官网demo
-2.2当前是否需要校验参数
-2.3如果需要校验参数请在validators下书写校验方法
-3.contract写入  if (! await userSchema.triggerValidation(ctx, user)) return 即可完成校验。调用service层
-4.service 中书写代码 调用model进行数据库操作
-5.如果没有对应model文件，再去创建model文件
-# 代码开发流程2 使用工具
-1.npm i -g nexus-easy-mvc
-2.输入mvc，根据交互输入对应的信息即可，注意支持的项目路径如下 （请在根目录使用,之后会使用配置时设置）
-  1.router:app/router.ts
-  2.controller:app/controller
-  3.service:app/service
-  4.model:app/model
-3.根据所需条件进行增删代码
+
+# 代码开发 2 选一，如下
+
+# 代码开发流程 1
+
+1.router 书写路由调用 controller 层
+2.controller 书写代码，
+2.1 记得书写 swagger 注释。如果 swagger 注释类型是对象类型，请在 contract 书写，其他 swagger 问题请 github 搜索 egg-swagger 查看官网 demo
+2.2 当前是否需要校验参数
+2.3 如果需要校验参数请在 validators 下书写校验方法
+3.contract 写入 if (! await userSchema.triggerValidation(ctx, user)) return 即可完成校验。调用 service 层
+4.service 中书写代码 调用 model 进行数据库操作 5.如果没有对应 model 文件，再去创建 model 文件
+
+# 代码开发流程 2 使用工具
+
+1.npm i -g nexus-easy-mvc 2.输入 mvc，根据交互输入对应的信息即可，注意支持的项目路径如下 （请在根目录使用,之后会使用配置时设置）
+1.router:app/router.ts
+2.controller:app/controller
+3.service:app/service
+4.model:app/model 3.根据所需条件进行增删代码
 
 # 代码开发规范
-1.常量全大写
-2.注释
-3.命名小驼峰
-4.不能有any
-# 分支名规范
-前缀描述-WW-分支号，列：feat-WW-1
-1.前缀描述:
-  1.1 新功能：feat
-  1.2 缺陷/bug：fix
-  1.3 优化：perf
-  1.4 样式优化：style
-  1.5 文档完善：doc
-# commit规范
-git commit -m "前缀: ww-1@github名 任务描述xxxxx"
-# 推送代码流程
-https://www.yuque.com/yuqueyonghubka1if/piw85r/vbxdn16pnka5sf3l
 
+1.常量全大写 2.注释 3.命名小驼峰 4.不能有 any
+
+# 分支名规范
+
+前缀描述-WW-分支号，列：feat-WW-1 1.前缀描述:
+1.1 新功能：feat
+1.2 缺陷/bug：fix
+1.3 优化：perf
+1.4 样式优化：style
+1.5 文档完善：doc
+
+# commit 规范
+
+git commit -m "前缀: ww-1@github 名 任务描述 xxxxx"
+
+# 推送代码流程
+
+https://www.yuque.com/yuqueyonghubka1if/piw85r/vbxdn16pnka5sf3l
